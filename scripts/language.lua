@@ -38,6 +38,11 @@ function LoadLanguage(language_name)
   -- Every line afterwards will set variables
 	local column = nil
   local data = {}
+--[[  for fields in db:lines() do -- column numbers are keys
+    for k,v in pairs(fields) do
+      print(string.format("key: %s, value: %s", k, v))
+    end
+  end ]]
 	
 	for fields in db:lines() do
 	 if(column == nil) then
